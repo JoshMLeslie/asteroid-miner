@@ -21,15 +21,12 @@ export const SolarMap = () => {
 	return (
 		<Layer>
 			<SolarSun />
-			{orbitalPlanets.map((planet) => {
-				return (
-					<OrbitalPlanet
-						key={planet.label}
-						planetData={planet.planetData}
-						orbitalRadius={planet.orbitalRadius}
-					/>
-				);
-			})}
+			{orbitalPlanets.map((planet) => (
+				<OrbitalPlanet
+					key={planet.label}
+					planetData={planet.planetData}
+					orbitalRadius={planet.orbitalRadius} />
+			))}
 		</Layer>
 	);
 };
