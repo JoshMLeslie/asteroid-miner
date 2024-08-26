@@ -6,17 +6,20 @@ import OrbitalPlanet from './js/orbit';
 import { orbitalPlanets } from './js/planet-data';
 import { SolarSun } from './js/sun';
 
-export const SolarMap = () => {
+export const SolarMap: React.FC<{
+	windowHeight: number;
+	windowWidth: number;
+}> = ({windowHeight, windowWidth}) => {
 	const solarContext = useSolarContext();
 
 	useEffect(() => {
 		solarContext?.setOrbit({
 			solarCenter: util.Size({
-				height: window.innerHeight / 2,
-				width: window.innerWidth / 2,
+				height: windowHeight / 2,
+				width: windowWidth / 2,
 			}),
 		});
-	}, []); // eslint-disable-line react-hooks/exhaustive-deps
+	}, [windowHeight, windowWidth]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
 		<Layer>
@@ -25,7 +28,8 @@ export const SolarMap = () => {
 				<OrbitalPlanet
 					key={planet.label}
 					planetData={planet.planetData}
-					orbitalRadius={planet.orbitalRadius} />
+					orbitalRadius={planet.orbitalRadius}
+				/>
 			))}
 		</Layer>
 	);

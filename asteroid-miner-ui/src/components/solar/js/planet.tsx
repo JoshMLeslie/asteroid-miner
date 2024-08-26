@@ -111,6 +111,8 @@ const SolarPlanet: React.FC<SolarPlanetProps> = ({planetData, onHover}) => {
 					image={image}
 					cornerRadius={planetData.radius}
 					{...center}
+					height={planetData?.multiImageSize?.height}
+					width={planetData?.multiImageSize?.width}
 					crop={{
 						...planetData?.multiImageOffset,
 						...planetData?.multiImageSize,
