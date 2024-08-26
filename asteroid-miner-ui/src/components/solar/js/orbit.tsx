@@ -48,7 +48,13 @@ const OrbitalPlanet: React.FC<OrbitProps> = ({
 				/>
 			)}
 			<SolarPlanet
-				planetData={{...planetData, initialCenter: {x: orbitRadius, y: -1}}}
+				planetData={{
+					...planetData,
+					initialCenter: {
+						x: orbitRadius + solarCenter.x - planetData.radius / 2,
+						y: -1,
+					},
+				}}
 				onHover={setHover}
 			/>
 		</Group>
