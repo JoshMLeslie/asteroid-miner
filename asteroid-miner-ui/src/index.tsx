@@ -7,13 +7,9 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-	(() => {
-		return (
-			<>
-				<div id="center-debug_v"></div>
-				<div id="center-debug_h"></div>
-				<App />
-			</>
-		);
-	})()
+	<>
+		<div id="center-debug_v"></div>
+		<div id="center-debug_h"></div>
+		<App />
+	</>
 );
