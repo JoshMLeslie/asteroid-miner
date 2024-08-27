@@ -21,7 +21,7 @@ export const orbitalPlanets: PlanetData[] = [
 		},
 		orbitalRadius: 90,
 	},
-	{
+	/*{
 		label: 'Mimas',
 		planetData: {
 			imageName: 'planets',
@@ -196,5 +196,5 @@ export const orbitalPlanets: PlanetData[] = [
 			},
 		},
 		orbitalRadius: 376,
-	},
+	},*/
 ];

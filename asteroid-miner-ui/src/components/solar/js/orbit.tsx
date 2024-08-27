@@ -37,14 +37,18 @@ const OrbitalPlanet: React.FC<OrbitProps> = ({
 					radius={orbitRadius}
 					{...solarCenter}
 					strokeWidth={3}
+					fillEnabled={false}
 					stroke={'rgb(0,192,255)'}
+					onMouseLeave={() => setHover(false)}
 				/>
 			) : (
 				<Circle
 					radius={orbitRadius}
 					{...solarCenter}
 					strokeWidth={3}
+					fillEnabled={false}
 					stroke={'rgba(0,192,255,0.5)'}
+					onMouseEnter={() => setHover(true)}
 				/>
 			)}
 			<SolarPlanet
@@ -58,19 +62,6 @@ const OrbitalPlanet: React.FC<OrbitProps> = ({
 				onHover={setHover}
 			/>
 		</Group>
-
-		// <canvas
-		//   width={shape.radius * 2}
-		//   height={shape.radius * 2}
-		//   ref={(canvas) => {
-		//     if (canvas) {
-		//       const ctx = canvas.getContext('2d');
-		//       if (ctx) {
-		//         renderTo(ctx, null);
-		//       }
-		//     }
-		//   }}
-		// />
 	);
 };
 
